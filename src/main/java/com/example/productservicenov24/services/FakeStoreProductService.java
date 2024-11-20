@@ -1,6 +1,7 @@
 package com.example.productservicenov24.services;
 
 import com.example.productservicenov24.dtos.FakeStoreProductDto;
+import com.example.productservicenov24.exceptions.ProductNotFoundException;
 import com.example.productservicenov24.models.Category;
 import com.example.productservicenov24.models.Product;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,16 @@ public class FakeStoreProductService implements ProductService{
     @Override
     public Product createProduct(Product product) {
         return null;
+    }
+
+    @Override
+    public Product patchProdcut(Long id, Product product) throws ProductNotFoundException {
+        return null;
+    }
+
+    @Override
+    public void deleteProduct(Long id) throws ProductNotFoundException {
+
     }
 
     private Product convertFakeStoreProductDtoToProduct(FakeStoreProductDto fakeStoreProductDto) {

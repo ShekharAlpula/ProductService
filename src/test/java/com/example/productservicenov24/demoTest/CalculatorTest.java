@@ -41,7 +41,7 @@ class CalculatorTest {
     }
 
     @Test
-    void divide() {
+    void ArithmaticExceptionInDivide() {
         int a =50, b = 0;
 
         //Action
@@ -49,5 +49,13 @@ class CalculatorTest {
 
         //Assertion
         assertThrows(ArithmeticException.class, ()->calculator.divide(a,b));
+    }
+
+    @Test
+    void divide() {
+        int a =60, b = 30;
+        Calculator calculator = new Calculator();
+        int result  = calculator.divide(a,b);
+        assertEquals(result,2);
     }
 }
