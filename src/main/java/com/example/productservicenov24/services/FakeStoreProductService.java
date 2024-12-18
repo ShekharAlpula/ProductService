@@ -3,6 +3,7 @@ package com.example.productservicenov24.services;
 import com.example.productservicenov24.dtos.FakeStoreProductDto;
 import com.example.productservicenov24.models.Category;
 import com.example.productservicenov24.models.Product;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -11,13 +12,27 @@ import java.util.List;
 @Service("FakeStoreProductService")
 public class FakeStoreProductService implements ProductService{
     RestTemplate restTemplate;
-    public FakeStoreProductService(RestTemplate restTemplate) {
+    RedisTemplate redisTemplate;
+
+    public FakeStoreProductService(RestTemplate restTemplate, RedisTemplate redisTemplate) {
         this.restTemplate = restTemplate;
+        this.redisTemplate = redisTemplate;
     }
     @Override
     public Product getProductById(Long id) {
-        FakeStoreProductDto fakeStoreProductDto = restTemplate.getForObject("https://fakestoreapi.com/products/" + id, FakeStoreProductDto.class);
-        return convertFakeStoreProductDtoToProduct(fakeStoreProductDto);
+        Product product = (Product) redisTemplate.opsForHash().get("PRODUCTS", "PRODUCTS_" +  id.toString());
+        if(product != null) {
+            return product;
+        }
+        FakeStoreProductDto fakeStoreProductDto = restTemplate.getForObject("https://fakestoreapi.com/products/" + id,
+                FakeStoreProductDto.class);
+
+//        if(fakeStoreProductDto == null) {
+//            throw new ProductNotFoundException("Product with Id "+ id +" not found");
+//        }
+       product =  convertFakeStoreProductDtoToProduct(fakeStoreProductDto);
+        redisTemplate.opsForHash().put("PRODUCTS",  "PRODUCTS_" + id, product);
+        return product;
     }
 
     @Override
