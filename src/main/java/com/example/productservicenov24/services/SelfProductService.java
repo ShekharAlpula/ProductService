@@ -37,6 +37,11 @@ public class SelfProductService implements ProductService {
     }
 
     @Override
+    public List<Product> getAllProductsPagination(Integer pageNo, Integer pageSize) {
+        return List.of();
+    }
+
+    @Override
     public Product replaceProduct(Long id, Product product) {
         return null;
     }

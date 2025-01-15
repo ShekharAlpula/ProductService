@@ -3,10 +3,13 @@ package com.example.productservicenov24.services;
 import com.example.productservicenov24.dtos.FakeStoreProductDto;
 import com.example.productservicenov24.models.Category;
 import com.example.productservicenov24.models.Product;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 @Service("FakeStoreProductService")
@@ -20,10 +23,11 @@ public class FakeStoreProductService implements ProductService{
     }
     @Override
     public Product getProductById(Long id) {
-        Product product = (Product) redisTemplate.opsForHash().get("PRODUCTS", "PRODUCTS_" +  id.toString());
-        if(product != null) {
-            return product;
-        }
+        Product product = null;
+//        product = (Product) redisTemplate.opsForHash().get("PRODUCTS", "PRODUCTS_" +  id.toString());
+//        if(product != null) {
+//            return product;
+//        }
         FakeStoreProductDto fakeStoreProductDto = restTemplate.getForObject("https://fakestoreapi.com/products/" + id,
                 FakeStoreProductDto.class);
 
@@ -31,13 +35,20 @@ public class FakeStoreProductService implements ProductService{
 //            throw new ProductNotFoundException("Product with Id "+ id +" not found");
 //        }
        product =  convertFakeStoreProductDtoToProduct(fakeStoreProductDto);
-        redisTemplate.opsForHash().put("PRODUCTS",  "PRODUCTS_" + id, product);
-        return product;
+       //redisTemplate.opsForHash().put("PRODUCTS",  "PRODUCTS_" + id, product);
+       return product;
     }
 
     @Override
     public List<Product> getAllProducts() {
         return null;
+    }
+
+    @Override
+    public List<Product> getAllProductsPagination(Integer pageNo, Integer pageSize) {
+        Pageable pageable = (Pageable) PageRequest.of(pageNo, pageSize);
+         //Page<Product> page =
+        return List.of();
     }
 
     @Override

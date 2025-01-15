@@ -9,7 +9,7 @@ import com.example.productservicenov24.services.ProductService;
 @RequestMapping("/products")
 public class ProductController {
 
-    ProductService productService;
+    private ProductService productService;
     public ProductController(@Qualifier("FakeStoreProductService") ProductService productService) {
         this.productService = productService;
     }

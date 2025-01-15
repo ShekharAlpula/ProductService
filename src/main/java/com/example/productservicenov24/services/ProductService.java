@@ -10,6 +10,7 @@ import java.util.List;
 public interface ProductService {
     Product getProductById(Long id);
     List<Product> getAllProducts();
+    List<Product> getAllProductsPagination(Integer pageNo, Integer pageSize);
     Product replaceProduct(Long id, Product product);
 
     Product createProduct(Product product);
