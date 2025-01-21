@@ -5,12 +5,14 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import com.example.productservicenov24.services.ProductService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/products")
 public class ProductController {
 
     private ProductService productService;
-    public ProductController(@Qualifier("FakeStoreProductService") ProductService productService) {
+    public ProductController(@Qualifier("SelfProductService") ProductService productService) {
         this.productService = productService;
     }
 
@@ -23,5 +25,10 @@ public class ProductController {
     @PostMapping()
     public Product createProduct(@RequestBody Product product) {
         return productService.createProduct(product);
+    }
+
+    @PostMapping("/all")
+    public List<Product> addMultipleProducts(@RequestBody List<Product> products) {
+        return productService.addMultipleProducts(products);
     }
 }

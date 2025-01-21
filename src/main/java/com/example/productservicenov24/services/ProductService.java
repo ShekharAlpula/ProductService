@@ -14,4 +14,6 @@ public interface ProductService {
     Product replaceProduct(Long id, Product product);
 
     Product createProduct(Product product);
+
+    List<Product> addMultipleProducts(List<Product> products);
 }

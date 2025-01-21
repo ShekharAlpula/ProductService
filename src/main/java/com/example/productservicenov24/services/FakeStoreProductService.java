@@ -61,6 +61,11 @@ public class FakeStoreProductService implements ProductService{
         return null;
     }
 
+    @Override
+    public List<Product> addMultipleProducts(List<Product> products) {
+        return List.of();
+    }
+
     private Product convertFakeStoreProductDtoToProduct(FakeStoreProductDto fakeStoreProductDto) {
         if (fakeStoreProductDto == null) {
             return null;

@@ -1,5 +1,6 @@
 package com.example.productservicenov24.models;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;
@@ -11,9 +12,8 @@ import java.io.Serializable;
 @Setter
 @Entity
 public class Product extends BaseModel implements Serializable {
-    String description;
     Double price;
-    @ManyToOne
+    String description;
+    @ManyToOne(cascade = CascadeType.PERSIST)
     Category category;
-    int amt;
 }

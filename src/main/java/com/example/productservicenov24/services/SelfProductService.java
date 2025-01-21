@@ -7,7 +7,10 @@ import com.example.productservicenov24.repos.CategoryRepo;
 import com.example.productservicenov24.repos.ProductRepo;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service("SelfProductService")
 @Primary
@@ -48,13 +51,24 @@ public class SelfProductService implements ProductService {
 
     @Override
     public Product createProduct(Product product) {
-        Category category = product.getCategory();
-        if(category.getId() == null) {
-            Category savedCategory = categoryRepo.save(category);
-            product.setCategory(savedCategory);
+        Optional<Category> categoryOPt = categoryRepo.findByTitle(product.getCategory().getTitle());
+        if(categoryOPt.isEmpty()) {
+            Category category = categoryRepo.save(product.getCategory());
+            product.setCategory(category);
         }else{
-            //category exists
+            product.setCategory(categoryOPt.get());
         }
+
         return productRepo.save(product);
+    }
+
+    @Override
+    public List<Product> addMultipleProducts(List<Product> products) {
+        List<Product>   productList = new ArrayList<>();
+        for(Product product : products) {
+            Product prod = createProduct(product);
+            productList.add(prod);
+        }
+        return productList;
     }
 }

@@ -10,4 +10,5 @@ import java.io.Serializable;
 @Setter
 @Entity
 public class Category extends BaseModel implements Serializable {
+    String description;
 }
