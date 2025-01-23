@@ -291,5 +291,95 @@ http://localhost:8000/products/all
             "title": "Books - Biographies",
             "description": "Biographies Category"
         }
-    }
+    },
+    {
+            "title": "Hamilton Beach Blender",
+            "price": 49.99,
+            "description": "Powerful blender with 12 blending functions for smoothies, soups, and more.",
+            "category": {
+                "title": "Kitchen Appliances",
+                "description": "Kitchen Appliances Category"
+            }
+        },
+        {
+            "title": "KitchenAid Stand Mixer",
+            "price": 379.99,
+            "description": "Iconic stand mixer with 10 speeds, perfect for baking and cooking.",
+            "category": {
+                "title": "Kitchen Appliances",
+                "description": "Kitchen Appliances Category"
+            }
+        },
+        {
+            "title": "Cuisinart Food Processor",
+            "price": 119.99,
+            "description": "Versatile food processor with 3-cup capacity, great for chopping, slicing, and pureeing.",
+            "category": {
+                "title": "Kitchen Appliances",
+                "description": "Kitchen Appliances Category"
+            }
+        },
+        {
+            "title": "OXO Good Grips Cutting Board",
+            "price": 22.99,
+            "description": "Durable and non-slip cutting board ideal for everyday food prep.",
+            "category": {
+                "title": "Kitchenware",
+                "description": "Kitchenware Category"
+            }
+        },
+        {
+            "title": "Le Creuset Dutch Oven",
+            "price": 299.00,
+            "description": "Premium enameled cast iron Dutch oven for perfect cooking and baking.",
+            "category": {
+                "title": "Cookware",
+                "description": "Cookware Category"
+            }
+        },
+        {
+            "title": "Ninja Air Fryer",
+            "price": 99.99,
+            "description": "Healthy air fryer with multiple cooking functions for frying, roasting, and baking.",
+            "category": {
+                "title": "Kitchen Appliances",
+                "description": "Kitchen Appliances Category"
+            }
+        },
+        {
+            "title": "Instant Pot Duo 7-in-1",
+            "price": 89.99,
+            "description": "Multi-functional pressure cooker for quick and easy cooking of various dishes.",
+            "category": {
+                "title": "Kitchen Appliances",
+                "description": "Kitchen Appliances Category"
+            }
+        },
+        {
+            "title": "Pyrex Glass Measuring Cup",
+            "price": 10.99,
+            "description": "Durable and heat-resistant glass measuring cup with easy-to-read measurements.",
+            "category": {
+                "title": "Kitchenware",
+                "description": "Kitchenware Category"
+            }
+        },
+        {
+            "title": "Zwilling J.A. Henckels Knife Set",
+            "price": 149.99,
+            "description": "High-quality German knife set with ergonomic handles and precision cutting.",
+            "category": {
+                "title": "Kitchen Tools",
+                "description": "Kitchen Tools Category"
+            }
+        },
+        {
+            "title": "Bodum French Press Coffee Maker",
+            "price": 29.99,
+            "description": "Elegant French press coffee maker for brewing rich and flavorful coffee.",
+            "category": {
+                "title": "Kitchen Appliances",
+                "description": "Kitchen Appliances Category"
+            }
+        }
 ]
