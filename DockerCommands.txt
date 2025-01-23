@@ -1,0 +1,4 @@
+mvn package -DskipTests
+java -jar <Path>\target\ProductServiceNov24-0.0.1-SNAPSHOT.jar
+docker build -t products_spring-boot-app .
+docker run -p 8080:8080 products_spring-boot-app

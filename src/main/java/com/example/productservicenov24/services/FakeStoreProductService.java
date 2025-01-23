@@ -27,6 +27,11 @@ public class FakeStoreProductService implements ProductService{
     }
 
     @Override
+    public List<Product> getAllProductsPagination(Integer pageNo, Integer pageSize) {
+        return List.of();
+    }
+
+    @Override
     public Product replaceProduct(Long id, Product product) {
         return null;
     }
@@ -34,6 +39,11 @@ public class FakeStoreProductService implements ProductService{
     @Override
     public Product createProduct(Product product) {
         return null;
+    }
+
+    @Override
+    public List<Product> addMultipleProducts(List<Product> products) {
+        return List.of();
     }
 
     @Override

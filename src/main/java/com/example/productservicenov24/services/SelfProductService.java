@@ -6,26 +6,24 @@ import com.example.productservicenov24.models.Product;
 import com.example.productservicenov24.projections.ProductTitleAndDescription;
 import com.example.productservicenov24.repos.CategoryRepo;
 import com.example.productservicenov24.repos.ProductRepo;
-import jakarta.persistence.Id;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service("SelfProductService")
 @Primary
 public class SelfProductService implements ProductService {
-    private final ProductRepo productRepo;
-    private final CategoryRepo categoryRepo;
-
+    private  ProductRepo productRepo;
+    private CategoryRepo categoryRepo;
     public SelfProductService(ProductRepo productRepo, CategoryRepo categoryRepo) {
         this.productRepo = productRepo;
         this.categoryRepo = categoryRepo;
     }
     @Override
-    public Product getProductById(Long id) throws ProductNotFoundException {
+    public Product getProductById(Long id) {
         //Sample Projections simulations - where we want to restrict data to be  sent out
         ProductTitleAndDescription productTitleAndDescription = productRepo.getProductTitleAndDescription(id);
         System.out.println("Title: " + productTitleAndDescription.getTitle() +
@@ -34,23 +32,25 @@ public class SelfProductService implements ProductService {
         productTitleAndDescription = productRepo.getProductTitleAndDescriptionSQL(id);
         System.out.println("With Native Query: Title: " + productTitleAndDescription.getTitle() +
                 ", Description " +productTitleAndDescription.getDescription());
-        Optional<Product> savedProduct = productRepo.findById(id);
-        if(savedProduct.isEmpty()){
-            throw new ProductNotFoundException(id, "Product with Id " +id +" is not found");
-        }
         return productRepo.findById(id).get();
     }
 
     @Override
     public List<Product> getAllProducts() {
-       return productRepo.findAll();
+        return null;
     }
 
     @Override
-    public Product replaceProduct(Long id, Product product) throws ProductNotFoundException{
+    public List<Product> getAllProductsPagination(Integer pageNo, Integer pageSize) {
+        return List.of();
+    }
+
+    @Override
+    public Product replaceProduct(Long id, Product product) {
         Optional<Product> optProduct = productRepo.findById(id);
         if(optProduct.isEmpty()) {
-            throw new ProductNotFoundException(id, "Product with Id " +id + " not found");
+            //throw new ProductNotFoundException(id, "Product with Id " +id + " not found");
+            return null;
 
         }
         Product product1 = optProduct.get();
@@ -62,13 +62,14 @@ public class SelfProductService implements ProductService {
 
     @Override
     public Product createProduct(Product product) {
-        Category category = product.getCategory();
-        if(category.getId() == null) {
-            Category savedCategory = categoryRepo.save(category);
-            product.setCategory(savedCategory);
+        Optional<Category> categoryOPt = categoryRepo.findByTitle(product.getCategory().getTitle());
+        if(categoryOPt.isEmpty()) {
+            Category category = categoryRepo.save(product.getCategory());
+            product.setCategory(category);
         }else{
-            //category exists
+            product.setCategory(categoryOPt.get());
         }
+
         return productRepo.save(product);
     }
 
@@ -95,4 +96,16 @@ public class SelfProductService implements ProductService {
         productRepo.deleteById(id);
 
     }
+
+    @Override
+    public List<Product> addMultipleProducts(List<Product> products) {
+        List<Product>   productList = new ArrayList<>();
+        for(Product product : products) {
+            Product prod = createProduct(product);
+            productList.add(prod);
+        }
+        return productList;
+    }
+
+
 }

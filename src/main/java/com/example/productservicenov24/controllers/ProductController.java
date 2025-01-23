@@ -19,11 +19,10 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public Product getProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
+    public Product getProductById(@PathVariable("id") Long id) {
 
         return productService.getProductById(id);
     }
-
     @GetMapping
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
@@ -46,5 +45,10 @@ public class ProductController {
     public ResponseEntity<Void> deleteProduct(@PathVariable("id") Long id) throws ProductNotFoundException {
         productService.deleteProduct(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/all")
+    public List<Product> addMultipleProducts(@RequestBody List<Product> products) {
+        return productService.addMultipleProducts(products);
     }
 }

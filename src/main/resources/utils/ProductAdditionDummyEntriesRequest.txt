@@ -1,0 +1,385 @@
+http://localhost:8000/products/all
+
+
+[
+    {
+
+        "title": "Lux",
+        "price": 46.0,
+        "description": "Body Soap",
+        "category": {
+
+            "title": "Soaps",
+            "description": "Soaps Category"
+        }
+    },
+    {
+
+        "title": "Dove",
+        "price": 55.0,
+        "description": "Moisturizing Soap",
+        "category": {
+
+            "title": "Soaps",
+            "description": "Soaps Category"
+        }
+    },
+    {
+
+        "title": "Lifebuoy",
+        "price": 30.0,
+        "description": "Antibacterial Soap",
+        "category": {
+
+            "title": "Soaps",
+            "description": "Soaps Category"
+        }
+    },
+    {
+
+        "title": "Pears",
+        "price": 60.0,
+        "description": "Transparent Soap",
+        "category": {
+
+            "title": "Soaps",
+            "description": "Soaps Category"
+        }
+    },
+    {
+
+        "title": "Nivea",
+        "price": 75.0,
+        "description": "Cream Soap",
+        "category": {
+
+            "title": "Soaps",
+            "description": "Soaps Category"
+        }
+    },
+    {
+
+        "title": "Dettol",
+        "price": 50.0,
+        "description": "Disinfectant Soap",
+        "category": {
+
+            "title": "Soaps",
+            "description": "Soaps Category"
+        }
+    },
+    {
+
+        "title": "Hamam",
+        "price": 40.0,
+        "description": "Herbal Soap",
+        "category": {
+
+            "title": "Soaps",
+            "description": "Soaps Category"
+        }
+    },
+    {
+
+        "title": "Santoor",
+        "price": 35.0,
+        "description": "Sandalwood Soap",
+        "category": {
+
+            "title": "Soaps",
+            "description": "Soaps Category"
+        }
+    },
+    {
+
+        "title": "Cinthol",
+        "price": 45.0,
+        "description": "Deodorant Soap",
+        "category": {
+
+            "title": "Soaps",
+            "description": "Soaps Category"
+        }
+    },
+    {
+
+        "title": "Medimix",
+        "price": 25.0,
+        "description": "Ayurvedic Soap",
+        "category": {
+
+            "title": "Soaps",
+            "description": "Soaps Category"
+        }
+    },
+    {
+        "title": "Samsung Galaxy S23",
+        "price": 999.99,
+        "description": "Smartphone with 5G capability",
+        "category": {
+            "title": "Smartphones",
+            "description": "Smartphones Category"
+        }
+    },
+    {
+        "title": "Apple iPhone 15",
+        "price": 1099.00,
+        "description": "iOS smartphone with 6.1-inch display",
+        "category": {
+            "title": "Smartphones",
+            "description": "Smartphones Category"
+        }
+    },
+    {
+        "title": "Sony WH-1000XM5",
+        "price": 349.99,
+        "description": "Noise-canceling over-ear headphones",
+        "category": {
+            "title": "Headphones",
+            "description": "Headphones Category"
+        }
+    },
+    {
+        "title": "Bose QuietComfort 45",
+        "price": 329.99,
+        "description": "Wireless noise-canceling headphones",
+        "category": {
+            "title": "Headphones",
+            "description": "Headphones Category"
+        }
+    },
+    {
+        "title": "GoPro HERO11",
+        "price": 399.99,
+        "description": "Action camera with 5.3K video recording",
+        "category": {
+            "title": "Cameras",
+            "description": "Cameras Category"
+        }
+    },
+    {
+        "title": "Canon EOS R5",
+        "price": 3899.00,
+        "description": "Mirrorless digital camera with 8K video",
+        "category": {
+            "title": "Cameras",
+            "description": "Cameras Category"
+        }
+    },
+    {
+        "title": "Dell XPS 13",
+        "price": 1499.99,
+        "description": "Laptop with 13-inch 4K display and Intel i7 processor",
+        "category": {
+            "title": "Laptops",
+            "description": "Laptops Category"
+        }
+    },
+    {
+        "title": "MacBook Pro 14-inch",
+        "price": 1999.00,
+        "description": "Apple laptop with M1 Pro chip and Retina display",
+        "category": {
+            "title": "Laptops",
+            "description": "Laptops Category"
+        }
+    },
+    {
+        "title": "Samsung QLED 55\" TV",
+        "price": 799.99,
+        "description": "Smart TV with 4K resolution and voice control",
+        "category": {
+            "title": "Televisions",
+            "description": "Televisions Category"
+        }
+    },
+    {
+        "title": "LG OLED C1 65\" TV",
+        "price": 1799.00,
+        "description": "OLED 4K smart TV with webOS and Dolby Vision",
+        "category": {
+            "title": "Televisions",
+            "description": "Televisions Category"
+        }
+    },
+    {
+        "title": "To Kill a Mockingbird",
+        "price": 12.99,
+        "description": "A classic novel of racism and injustice in the American South.",
+        "category": {
+            "title": "Books - Fiction",
+            "description": "Fiction Category"
+        }
+    },
+    {
+        "title": "1984",
+        "price": 9.99,
+        "description": "A dystopian novel about a totalitarian regime that controls every aspect of life.",
+        "category": {
+            "title": "Books - Fiction",
+            "description": "Fiction Category"
+        }
+    },
+    {
+        "title": "The Great Gatsby",
+        "price": 10.99,
+        "description": "A novel exploring the American dream and the excesses of the Jazz Age.",
+        "category": {
+            "title": "Books - Fiction",
+            "description": "Fiction Category"
+        }
+    },
+    {
+        "title": "The Catcher in the Rye",
+        "price": 11.50,
+        "description": "A story about the struggles of a teenage boy in New York City.",
+        "category": {
+            "title": "Books - Fiction",
+            "description": "Fiction Category"
+        }
+    },
+    {
+        "title": "Sapiens: A Brief History of Humankind",
+        "price": 18.00,
+        "description": "A thought-provoking exploration of the history of humankind from the Stone Age to the modern age.",
+        "category": {
+            "title": "Books - Non-Fiction",
+            "description": "Non-Fiction Category"
+        }
+    },
+    {
+        "title": "Educated",
+        "price": 14.99,
+        "description": "A memoir about a woman who grows up in a strict and abusive household and eventually escapes to pursue education.",
+        "category": {
+            "title": "Books - Non-Fiction",
+            "description": "Non-Fiction Category"
+        }
+    },
+    {
+        "title": "The Power of Habit",
+        "price": 16.50,
+        "description": "A book on how habits are formed and how they can be changed to improve your life.",
+        "category": {
+            "title": "Books - Self-Help",
+            "description": "Self-Help Category"
+        }
+    },
+    {
+        "title": "Atomic Habits",
+        "price": 17.00,
+        "description": "A guide on how to build good habits and break bad ones using proven methods.",
+        "category": {
+            "title": "Books - Self-Help",
+            "description": "Self-Help Category"
+        }
+    },
+    {
+        "title": "The Subtle Art of Not Giving a F*ck",
+        "price": 14.00,
+        "description": "A no-nonsense guide to living a better life by focusing on what truly matters.",
+        "category": {
+            "title": "Books - Self-Help",
+            "description": "Self-Help Category"
+        }
+    },
+    {
+        "title": "Becoming",
+        "price": 20.00,
+        "description": "A memoir by Michelle Obama about her life, career, and experiences.",
+        "category": {
+            "title": "Books - Biographies",
+            "description": "Biographies Category"
+        }
+    },
+    {
+            "title": "Hamilton Beach Blender",
+            "price": 49.99,
+            "description": "Powerful blender with 12 blending functions for smoothies, soups, and more.",
+            "category": {
+                "title": "Kitchen Appliances",
+                "description": "Kitchen Appliances Category"
+            }
+        },
+        {
+            "title": "KitchenAid Stand Mixer",
+            "price": 379.99,
+            "description": "Iconic stand mixer with 10 speeds, perfect for baking and cooking.",
+            "category": {
+                "title": "Kitchen Appliances",
+                "description": "Kitchen Appliances Category"
+            }
+        },
+        {
+            "title": "Cuisinart Food Processor",
+            "price": 119.99,
+            "description": "Versatile food processor with 3-cup capacity, great for chopping, slicing, and pureeing.",
+            "category": {
+                "title": "Kitchen Appliances",
+                "description": "Kitchen Appliances Category"
+            }
+        },
+        {
+            "title": "OXO Good Grips Cutting Board",
+            "price": 22.99,
+            "description": "Durable and non-slip cutting board ideal for everyday food prep.",
+            "category": {
+                "title": "Kitchenware",
+                "description": "Kitchenware Category"
+            }
+        },
+        {
+            "title": "Le Creuset Dutch Oven",
+            "price": 299.00,
+            "description": "Premium enameled cast iron Dutch oven for perfect cooking and baking.",
+            "category": {
+                "title": "Cookware",
+                "description": "Cookware Category"
+            }
+        },
+        {
+            "title": "Ninja Air Fryer",
+            "price": 99.99,
+            "description": "Healthy air fryer with multiple cooking functions for frying, roasting, and baking.",
+            "category": {
+                "title": "Kitchen Appliances",
+                "description": "Kitchen Appliances Category"
+            }
+        },
+        {
+            "title": "Instant Pot Duo 7-in-1",
+            "price": 89.99,
+            "description": "Multi-functional pressure cooker for quick and easy cooking of various dishes.",
+            "category": {
+                "title": "Kitchen Appliances",
+                "description": "Kitchen Appliances Category"
+            }
+        },
+        {
+            "title": "Pyrex Glass Measuring Cup",
+            "price": 10.99,
+            "description": "Durable and heat-resistant glass measuring cup with easy-to-read measurements.",
+            "category": {
+                "title": "Kitchenware",
+                "description": "Kitchenware Category"
+            }
+        },
+        {
+            "title": "Zwilling J.A. Henckels Knife Set",
+            "price": 149.99,
+            "description": "High-quality German knife set with ergonomic handles and precision cutting.",
+            "category": {
+                "title": "Kitchen Tools",
+                "description": "Kitchen Tools Category"
+            }
+        },
+        {
+            "title": "Bodum French Press Coffee Maker",
+            "price": 29.99,
+            "description": "Elegant French press coffee maker for brewing rich and flavorful coffee.",
+            "category": {
+                "title": "Kitchen Appliances",
+                "description": "Kitchen Appliances Category"
+            }
+        }
+]

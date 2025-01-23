@@ -9,11 +9,14 @@ import java.util.List;
 
 @Service
 public interface ProductService {
-    Product getProductById(Long id) throws ProductNotFoundException;
+    Product getProductById(Long id);
     List<Product> getAllProducts();
-    Product replaceProduct(Long id, Product product) throws ProductNotFoundException;
+    List<Product> getAllProductsPagination(Integer pageNo, Integer pageSize);
+    Product replaceProduct(Long id, Product product);
 
     Product createProduct(Product product);
+
+    List<Product> addMultipleProducts(List<Product> products);
 
     Product patchProdcut(Long id, Product product) throws ProductNotFoundException;
 
